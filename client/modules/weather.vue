@@ -3,7 +3,6 @@
     <p v-if="weatherStatus" class="result">
       <i :class="`wi wi-owm-${dayNight}-${weatherStatus}`"></i>
       <span class="mono">{{temp}}</span><i class="wi wi-celsius"></i>
-      <span class="mono">{{humidity}}</span><span class="percentage"><i class="wi wi-humidity"></i></span>
     </p>
     <p v-if="weatherStatus" class="location mono">TOKYO / JAPAN</p>
     <p v-else>Weather N/A</p>
@@ -18,8 +17,7 @@
       return {
         dayNight: null,
         weatherStatus: null,
-        temp: null,
-        humidity: null
+        temp: null
       };
     },
     methods: {
@@ -33,7 +31,6 @@
         ajax.then((res) => {
           this.weatherStatus = res.body.weather[0].id;
           this.temp = Math.round(res.body.main.temp);
-          this.humidity = res.body.main.humidity;
 
           // 昼夜判定
           const sunrise = res.body.sys.sunrise;
@@ -97,10 +94,6 @@
     .mono {
       font-family: 'Share Tech Mono', monospace;
     }
-    .percentage {
-      font-size: 3.2rem;
-      vertical-align: 1.6rem;
-    }
   }
   @media (max-width: 1094px) {
     .weather {
@@ -109,10 +102,6 @@
       }
       .location {
         font-size: 1.5rem;
-      }
-      .percentage {
-        font-size: 2rem;
-        vertical-align: 1.2rem;
       }
     }
   }
