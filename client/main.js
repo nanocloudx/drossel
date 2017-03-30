@@ -10,6 +10,7 @@ import about from './pages/about.vue';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/',

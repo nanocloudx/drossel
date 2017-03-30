@@ -3,7 +3,11 @@ const passport = require('passport');
 
 const router = express.Router();
 
-router.get('/', function(req, res, next) {
+const pages = [
+  '/', '/work', '/article', '/gallary', '/about'
+];
+
+router.get(pages, function(req, res, next) {
   res.render('index');
 });
 
