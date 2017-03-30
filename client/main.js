@@ -46,10 +46,16 @@ const router = new VueRouter({
   ]
 });
 
+// Google Analytics
+window.ga = window.ga || function() {
+  (window.ga.q = window.ga.q || []).push(arguments);
+};
+window.ga.l = Number(new Date);
+window.ga('create', 'UA-82809079-1', 'auto');
+
 router.afterEach((to) => {
-  // GoogleAnalytics
-  ga('set', 'page', to.path);
-  ga('send', 'pageview');
+  window.ga('set', 'page', to.path);
+  window.ga('send', 'pageview');
 });
 
 new Vue({
