@@ -25,10 +25,10 @@ router.get('/auth/logout', (req, res) => {
 });
 
 function isAuthenticated(req, res, next) {
-  if (!req.user) {
-    res.redirect('/auth/twitter');
+  if (req.user) {
+    return next();
   }
-  return next();
+  res.redirect('/auth/twitter');
 }
 
 module.exports = router;
