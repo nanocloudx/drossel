@@ -10,12 +10,12 @@ const compression = require('compression');
 const session = require('express-session');
 const csrf = require('csurf');
 const DrosselRateLimit = require('drossel-rate-limit');
-const SessionRedisStore = require('connect-redis')(session);
+const RedisStore = require('connect-redis')(session);
 const passport = require('passport');
 
 const router = require('./router');
 const TwitterStrategy = require('./utils/TwitterStrategy');
-const sessionRedisClient = require('./utils/session-redis');
+const redisClient = require('./utils/redis');
 
 const app = express();
 
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // アクセス制限
 //--------------------------------------------------
 app.use(new DrosselRateLimit({
-  store: sessionRedisClient,
+  store: redisClient,
   time: 10, // 10 sec
   limit: 10, // 10 requests
   prefix: 'limit:',
@@ -53,8 +53,8 @@ app.use(session({
   secret: 'drosselSecret',
   resave: false,
   saveUninitialized: false,
-  store: new SessionRedisStore({
-    client: sessionRedisClient,
+  store: new RedisStore({
+    client: redisClient,
     prefix: 'session:',
     ttl: 60 * 60 * 24 * 3 // 3日間アクセスがない場合は Redis からセッション削除
   })
