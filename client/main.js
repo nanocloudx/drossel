@@ -46,6 +46,12 @@ const router = new VueRouter({
   ]
 });
 
+router.afterEach((to) => {
+  // GoogleAnalytics
+  ga('set', 'page', to.path);
+  ga('send', 'pageview');
+});
+
 new Vue({
   el: '#app',
   router
