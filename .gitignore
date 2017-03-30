@@ -1,0 +1,9 @@
+.idea/
+*.iml
+node_modules/
+*.log*
+.DS_Store
+.env
+server/public/*.js
+server/public/*.css
+dump.rdb
