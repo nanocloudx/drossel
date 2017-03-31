@@ -20,19 +20,28 @@
       'modules-article-list': articleList
     },
     methods: {
-      fetch() {
-        const baseUrl = '/api/articles';
+      fetchQiitaList() {
+        const baseUrl = '/api/articles/qiita';
         request
           .get(baseUrl)
           .set('content-type', 'application/json')
           .then((res) => {
-            this.qiita = res.body.qiita;
-            this.medium = res.body.medium;
+            this.qiita = res.body;
+          });
+      },
+      fetchMediumList() {
+        const baseUrl = '/api/articles/medium';
+        request
+          .get(baseUrl)
+          .set('content-type', 'application/json')
+          .then((res) => {
+            this.medium = res.body;
           });
       }
     },
     mounted() {
-      this.fetch();
+      this.fetchQiitaList();
+      this.fetchMediumList();
     },
   };
 </script>

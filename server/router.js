@@ -16,7 +16,8 @@ router.get('/secret', isAuthenticated, (req, res) => {
   res.render('secret');
 });
 
-router.get('/api/articles', articlesAPI.fetchList);
+router.get('/api/articles/qiita', articlesAPI.fetchQiitaList);
+router.get('/api/articles/medium', articlesAPI.fetchMediumList);
 
 //--------------------------------------------------
 // Authentication

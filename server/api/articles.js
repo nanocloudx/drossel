@@ -1,12 +1,24 @@
 const request = require('superagent');
 
 const articlesAPI = {
-  fetchList: (req, res) => {
+  fetchAllList: (req, res) => {
     Promise.all([fetchQiita(), fetchMedium()]).then((results) => {
       res.json({
         qiita: results[0],
         medium: results[1]
       });
+    });
+  },
+
+  fetchQiitaList: (req, res) => {
+    fetchQiita().then((results) => {
+      res.json(results);
+    });
+  },
+
+  fetchMediumList: (req, res) => {
+    fetchMedium().then((results) => {
+      res.json(results);
     });
   }
 };
