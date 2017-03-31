@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+const articlesAPI = require('./api/articles');
 
 const router = express.Router();
 
@@ -14,6 +15,8 @@ router.get(pages, function(req, res, next) {
 router.get('/secret', isAuthenticated, (req, res) => {
   res.render('secret');
 });
+
+router.get('/api/articles', articlesAPI.fetchList);
 
 //--------------------------------------------------
 // Authentication

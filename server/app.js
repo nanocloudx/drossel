@@ -85,15 +85,13 @@ passport.deserializeUser((account, done) => {
 // ルーティング
 //--------------------------------------------------
 // APIアクセス
-app.use('/apis/', (req, res, next) => {
-
+app.use('/api/', (req, res, next) => {
   const contentType = req.headers['content-type'];
   if (!contentType || contentType.indexOf('application/json') !== 0) {
     res.status(415);
     res.json({ error: 'UNSUPPORTED_MEDIA_TYPE' });
     return;
   }
-
   // リファラーがdrossel.io(またはreviewApp)からでなければAPIを叩かせない
   const drosselRegExp = /^http:\/\/((www|stage|localhost)\.)?drossel\.io(:3000)?\//;
   const herokuRegExp = /^https:\/\/drossel-stage-pr-([0-9]+\.)?herokuapp\.com\//;
@@ -102,7 +100,6 @@ app.use('/apis/', (req, res, next) => {
     res.json({ error: 'FORBIDDEN' });
     return;
   }
-
   next();
 });
 
