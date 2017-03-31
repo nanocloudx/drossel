@@ -5,6 +5,7 @@
         :title="item.title"
         :timestamp="item.timestamp"
         :url="item.url"
+        :media="media"
       ></modules-article-item>
     </template>
   </div>
@@ -19,7 +20,7 @@
         //
       };
     },
-    props: ['items'],
+    props: ['items', 'media'],
     components: {
       'modules-article-item': articleItem
     }

@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const request = require('superagent');
 
 const articlesAPI = {
@@ -34,7 +35,7 @@ function fetchQiita() {
         url: item.url
       });
     });
-    return results;
+    return _.sortBy(results, 'timestamp').reverse();
   });
 }
 
@@ -50,7 +51,7 @@ function fetchMedium() {
         url: `https://medium.com/nanocloudx/${item.uniqueSlug}`
       });
     });
-    return results;
+    return _.sortBy(results, 'timestamp').reverse();
   });
 }
 
