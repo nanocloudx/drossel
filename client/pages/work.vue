@@ -1,11 +1,11 @@
 <template>
   <div id="work">
-    <modules-thumbnail :items="items"></modules-thumbnail>
+    <modules-thumbnail-list :items="items"></modules-thumbnail-list>
   </div>
 </template>
 
 <script>
-  import thumbnail from '../modules/thumbnail.vue';
+  import thumbnailList from '../modules/thumbnail-list.vue';
   export default {
     name: 'work',
     data () {
@@ -55,7 +55,7 @@
       };
     },
     components: {
-      'modules-thumbnail': thumbnail
+      'modules-thumbnail-list': thumbnailList
     }
   };
 </script>

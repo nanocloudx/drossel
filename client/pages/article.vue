@@ -1,17 +1,23 @@
 <template>
   <div id="article">
-    <p>{{articles}}</p>
+    <modules-article-list :items="qiita"></modules-article-list>
+    <modules-article-list :items="medium"></modules-article-list>
   </div>
 </template>
 
 <script>
   import request from 'superagent';
+  import articleList from '../modules/article-list.vue';
   export default {
     name: 'article',
     data () {
       return {
-        articles: null
+        qiita: null,
+        medium: null
       };
+    },
+    components: {
+      'modules-article-list': articleList
     },
     methods: {
       fetch() {
@@ -20,7 +26,8 @@
           .get(baseUrl)
           .set('content-type', 'application/json')
           .then((res) => {
-            this.articles = res.body;
+            this.qiita = res.body.qiita;
+            this.medium = res.body.medium;
           });
       }
     },

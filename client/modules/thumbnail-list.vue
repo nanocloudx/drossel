@@ -1,5 +1,5 @@
 <template>
-  <div class="thumbnail-container">
+  <div class="thumbnail-list">
     <template v-for="item in items">
       <modules-thumbnail-item
         :title="item.title"
@@ -18,7 +18,7 @@
 <script>
   import thumbnailItem from '../modules/thumbnail-item.vue';
   export default {
-    name: 'thumbnail',
+    name: 'thumbnailList',
     data () {
       return {
         //
@@ -32,22 +32,22 @@
 </script>
 
 <style lang="scss">
-  .thumbnail-container {
+  .thumbnail-list {
     overflow: hidden;
     margin: 0 auto;
   }
   @media (max-width: 1094px) {
-    .thumbnail-container {
+    .thumbnail-list {
       width: 780px;
     }
   }
   @media (max-width: 820px) {
-    .thumbnail-container {
+    .thumbnail-list {
       width: 520px;
     }
   }
   @media (max-width: 560px) {
-    .thumbnail-container {
+    .thumbnail-list {
       width: auto;
     }
   }

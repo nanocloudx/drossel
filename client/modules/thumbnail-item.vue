@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: 'thumbnail',
+    name: 'thumbnail-item',
     data () {
       return {
         //
