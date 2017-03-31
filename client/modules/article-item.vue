@@ -2,7 +2,6 @@
   <div class="article-item">
     <a :href="url" target="_blank">
       <h3 class="title">{{title}}</h3>
-      <p class="meta">{{timestamp}}</p>
     </a>
   </div>
 </template>
@@ -24,5 +23,10 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .article-item {
+    a {
+      text-decoration: none;
+    }
+    margin-bottom: 1rem;
+  }
 </style>

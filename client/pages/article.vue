@@ -1,7 +1,19 @@
 <template>
   <div id="article">
-    <modules-article-list :items="qiita"></modules-article-list>
-    <modules-article-list :items="medium"></modules-article-list>
+    <div class="media-container">
+      <div class="media">
+        <h2><i class="fa fa-code fa-fw" aria-hidden="true"></i>Tech</h2>
+        <modules-article-list :items="qiita"></modules-article-list>
+      </div>
+      <div class="media">
+        <h2><i class="fa fa-plane fa-fw" aria-hidden="true"></i>Travel</h2>
+        <modules-article-list :items="medium"></modules-article-list>
+      </div>
+      <div class="media">
+        <h2><i class="fa fa-twitter fa-fw" aria-hidden="true"></i>Twitter</h2>
+        <p>Under construction</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,5 +59,13 @@
 </script>
 
 <style lang="scss">
-
+  #article {
+    .media-container {
+      overflow: hidden;
+      .media {
+        float: left;
+        width: 345px;
+      }
+    }
+  }
 </style>
