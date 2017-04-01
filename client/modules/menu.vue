@@ -5,7 +5,6 @@
         <li><router-link to="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i>HOME</router-link></li>
         <li><router-link to="/work"><i class="fa fa-diamond fa-fw" aria-hidden="true"></i>WORK</router-link></li>
         <li><router-link to="/article"><i class="fa fa-newspaper-o fa-fw" aria-hidden="true"></i>ARTICLE</router-link></li>
-        <li><router-link to="/gallary"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>GALLARY</router-link></li>
         <li><router-link to="/about"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>ABOUT</router-link></li>
       </ul>
     </div>

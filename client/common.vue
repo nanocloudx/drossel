@@ -67,7 +67,7 @@
     max-width: 1080px;
   }
   .content {
-    margin: 2rem;
+    margin: 2rem 2rem 5rem;
   }
   .header-bar {
     position: fixed;

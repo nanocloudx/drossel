@@ -6,7 +6,7 @@ const articlesAPI = require('./api/articles');
 const router = express.Router();
 
 const pages = [
-  '/', '/work', '/article', '/gallary', '/about'
+  '/', '/work', '/article', '/about'
 ];
 
 router.get(pages, function(req, res, next) {

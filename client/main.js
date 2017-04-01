@@ -4,7 +4,6 @@ import common from './common.vue';
 import index from './pages/index.vue';
 import work from './pages/work.vue';
 import article from './pages/article.vue';
-import gallary from './pages/gallary.vue';
 import about from './pages/about.vue';
 
 Vue.use(VueRouter);
@@ -30,11 +29,6 @@ const router = new VueRouter({
           path: '/article',
           name: 'ARTICLE',
           component: article
-        },
-        {
-          path: '/gallary',
-          name: 'GALLARY',
-          component: gallary
         },
         {
           path: '/about',
