@@ -1,13 +1,13 @@
 <template>
   <a :href="url" target="_blank">
-  <div class="article-item">
+    <div class="article-item">
       <h3 class="title">{{title}}</h3>
       <p class="meta">
         <i class="fa fa-calendar" aria-hidden="true"></i> {{date}}
         <template v-if="retweet"><i class="fa fa-retweet" aria-hidden="true"></i> {{retweet}}</template>
         <template v-if="favorite"><i class="fa fa-heart-o" aria-hidden="true"></i> {{favorite}}</template>
       </p>
-  </div>
+    </div>
   </a>
 </template>
 
@@ -69,7 +69,7 @@
       color: #777777;
     }
     &:hover {
-      background-color: rgba(185, 148, 88, 0.71);
+      background-color: rgba(185, 148, 88, 0.7);
     }
   }
 </style>

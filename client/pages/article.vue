@@ -86,5 +86,17 @@
         }
       }
     }
+    @media (max-width: 700px) {
+      .media-container {
+        flex-direction: column;
+        .media {
+          width: 100%;
+          margin-bottom: 2rem;
+          .border {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 </style>
