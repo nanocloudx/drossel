@@ -8,7 +8,7 @@
       <p class="breadcrumbs">{{$route.name}}</p>
       <h1>
         <router-link to="/">
-          <img v-if="windowWidth >= 1080 && $route.name === 'INDEX'" src="/assets/images/logo-white.png" alt="どろっせる">
+          <img v-if="windowWidth >= 1095 && $route.name === 'INDEX'" src="/assets/images/logo-white.png" alt="どろっせる">
           <img v-else src="/assets/images/logo.png" alt="どろっせる">
         </router-link>
       </h1>
