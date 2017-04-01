@@ -36,19 +36,15 @@
     },
     methods: {
       fetchQiitaList() {
-        const baseUrl = '/api/articles/qiita';
         request
-          .get(baseUrl)
-          .set('content-type', 'application/json')
+          .get('/api/articles/qiita')
           .then((res) => {
             this.qiita = res.body;
           });
       },
       fetchMediumList() {
-        const baseUrl = '/api/articles/medium';
         request
-          .get(baseUrl)
-          .set('content-type', 'application/json')
+          .get('/api/articles/medium')
           .then((res) => {
             this.medium = res.body;
           });

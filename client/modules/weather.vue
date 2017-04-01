@@ -22,26 +22,10 @@
     },
     methods: {
       getWeather() {
-        const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
-        const ajax = request.get(baseUrl).query({
-          q: 'chiyoda,tokyo,jp',
-          units: 'metric',
-          APPID: '270d1fd480b5a8393b40039b1d53a52e'
-        });
-        ajax.then((res) => {
-          this.weatherStatus = res.body.weather[0].id;
-          this.temp = Math.round(res.body.main.temp);
-
-          // 昼夜判定
-          const sunrise = res.body.sys.sunrise;
-          const sunset = res.body.sys.sunset;
-          const nowTime = new Date().getTime() / 1000;
-          if (nowTime < sunrise || sunset < nowTime) {
-            this.dayNight = 'night';
-          } else {
-            this.dayNight = 'day';
-          }
-
+        request.get('/api/weather').then((res) => {
+          this.weatherStatus = res.body.status;
+          this.temp = res.body.temp;
+          this.dayNight = res.body.dayNight;
           // 背景用イベント
           // OpenWeatherMapのコードで判定
           // https://openweathermap.org/weather-conditions

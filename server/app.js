@@ -87,7 +87,7 @@ passport.deserializeUser((account, done) => {
 // APIアクセス
 app.use('/api/', (req, res, next) => {
   const contentType = req.headers['content-type'];
-  if (!contentType || contentType.indexOf('application/json') !== 0) {
+  if (contentType && contentType.indexOf('application/json') !== 0) {
     res.status(415);
     res.json({ error: 'UNSUPPORTED_MEDIA_TYPE' });
     return;

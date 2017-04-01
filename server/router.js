@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+const weatherAPI = require('./api/weather');
 const articlesAPI = require('./api/articles');
 
 const router = express.Router();
@@ -16,6 +17,7 @@ router.get('/secret', isAuthenticated, (req, res) => {
   res.render('secret');
 });
 
+router.get('/api/weather', weatherAPI.fetch);
 router.get('/api/articles/qiita', articlesAPI.fetchQiitaList);
 router.get('/api/articles/medium', articlesAPI.fetchMediumList);
 
