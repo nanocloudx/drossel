@@ -32,7 +32,7 @@ function fetchWeather() {
       const temp = Math.round(res.body.main.temp);
 
       const result = {status, temp, dayNight};
-      redisClient.setex('weather', 600, JSON.stringify(result)); // 10min
+      redisClient.setex('weather', 300, JSON.stringify(result)); // 5min
       return result;
     });
   });

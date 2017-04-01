@@ -5,6 +5,8 @@
         :title="item.title"
         :timestamp="item.timestamp"
         :url="item.url"
+        :retweet="item.retweet"
+        :favorite="item.favorite"
         :media="media"
       ></modules-article-item>
     </template>

@@ -14,7 +14,7 @@
       <div class="media">
         <h2><i class="fa fa-twitter fa-fw" aria-hidden="true"></i>Twitter</h2>
         <div class="border"></div>
-        <p>Under construction</p>
+        <modules-article-list :items="twitter" :media="'Twitter'"></modules-article-list>
       </div>
     </div>
   </div>
@@ -28,7 +28,8 @@
     data () {
       return {
         qiita: null,
-        medium: null
+        medium: null,
+        twitter: null
       };
     },
     components: {
@@ -48,11 +49,19 @@
           .then((res) => {
             this.medium = res.body;
           });
+      },
+      fetchTwitterList() {
+        request
+          .get('/api/articles/twitter')
+          .then((res) => {
+            this.twitter = res.body;
+          });
       }
     },
     mounted() {
       this.fetchQiitaList();
       this.fetchMediumList();
+      this.fetchTwitterList();
     },
   };
 </script>
@@ -63,17 +72,17 @@
       overflow: hidden;
       display: flex;
       .media {
-        margin: 0.5rem;
+        margin-right: 1rem;
         width: 345px;
         h2 {
           font-size: 1.8rem;
-          padding: 0 0.5rem;
+          margin: 0 0 0.6rem 0.1rem;
         }
         .border {
-          width: 200px;
+          width: 180px;
           height: 1px;
           background-color: #dddddd;
-          margin: 0.8rem 0;
+          margin: 0.5rem 0;
         }
       }
     }

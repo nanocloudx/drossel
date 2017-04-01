@@ -2,7 +2,11 @@
   <a :href="url" target="_blank">
   <div class="article-item">
       <h3 class="title">{{title}}</h3>
-      <p class="meta"><i class="fa fa-calendar" aria-hidden="true"></i> {{date}}</p>
+      <p class="meta">
+        <i class="fa fa-calendar" aria-hidden="true"></i> {{date}}
+        <template v-if="retweet"><i class="fa fa-retweet" aria-hidden="true"></i> {{retweet}}</template>
+        <template v-if="favorite"><i class="fa fa-heart-o" aria-hidden="true"></i> {{favorite}}</template>
+      </p>
   </div>
   </a>
 </template>
@@ -40,7 +44,9 @@
       'title',
       'timestamp',
       'url',
-      'media'
+      'media',
+      'favorite',
+      'retweet'
     ]
   };
 </script>
@@ -50,7 +56,7 @@
     text-decoration: none;
   }
   .article-item {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     .title {
       font-size: 1.5rem;
       line-height: 1.5rem;

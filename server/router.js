@@ -20,6 +20,7 @@ router.get('/secret', isAuthenticated, (req, res) => {
 router.get('/api/weather', weatherAPI.fetch);
 router.get('/api/articles/qiita', articlesAPI.fetchQiitaList);
 router.get('/api/articles/medium', articlesAPI.fetchMediumList);
+router.get('/api/articles/twitter', articlesAPI.fetchTwitterList);
 
 //--------------------------------------------------
 // Authentication
