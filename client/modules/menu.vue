@@ -8,10 +8,14 @@
         <li><router-link to="/about"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>ABOUT</router-link></li>
       </ul>
     </div>
-    <div>
+    <div class="bottom">
       <p class="copyright">
         <i class="fa fa-copyright fa-fw" aria-hidden="true"></i>2011 - 2017 どろっせる<br>
-        Made with <i class="fa fa-heart fa-fw" aria-hidden="true"></i> in Akihabara
+        Made with <i class="fa fa-heart fa-fw" aria-hidden="true"></i> in Tokyo
+      </p>
+      <p class="social">
+        <i @click="onClickTwitter" class="fa fa-twitter" aria-hidden="true"></i>
+        <i @click="onClickFacebook" class="fa fa-facebook-official" aria-hidden="true"></i>
       </p>
     </div>
   </div>
@@ -27,6 +31,20 @@
     methods: {
       onSelect() {
         this.$emit('onSelectMenuItem');
+      },
+      onClickTwitter() {
+        window.open(
+          'http://twitter.com/share?url=http://www.drossel.io/&text=どろっせる',
+          'twitter',
+          'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'
+        );
+      },
+      onClickFacebook() {
+        window.open(
+          'https://www.facebook.com/sharer/sharer.php?u=http://www.drossel.io/',
+          'facebook',
+          'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'
+        );
       }
     }
   };
@@ -77,10 +95,25 @@
       }
     }
 
-    .copyright {
-      color: #aaaaaa;
-      text-align: center;
-      font-size: 1rem;
+    .bottom {
+      position: absolute;
+      bottom: 2rem;
+      width: 240px;
+      .copyright {
+        color: #aaaaaa;
+        text-align: center;
+        font-size: 1rem;
+        margin: 1rem 0;
+      }
+      .social {
+        text-align: center;
+        font-size: 2rem;
+        i {
+          cursor: pointer;
+          color: #eeeeee;
+          margin: 0 0.3rem;
+        }
+      }
     }
   }
 </style>

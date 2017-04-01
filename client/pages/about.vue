@@ -7,13 +7,20 @@
       <div class="profile">
         <img class="profile-image" src="/assets/images/nanocloudx.jpg">
         <div class="profile-description">
-          <h3>なのくろ<span> / nanocloudx</span></h3>
+          <h3>
+            なのくろ
+            <span> / nanocloudx</span>
+            <span class="profile-link">
+              <a href="https://twitter.com/nanocloudx" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+              <a href="https://github.com/nanocloudx" target="_blank"><i class="fa fa-github fa-fw" aria-hidden="true"></i></a>
+            </span>
+          </h3>
           <dl>
             <dt>おしごと</dt>
             <dd>(たぶん)フロントエンドエンジニア</dd>
             <dt>できること</dt>
             <dd>
-              <p>Web開発 (JavaScript, Node.js, Vue.js, HTML, CSS, etc)</p>
+              <p>Web開発 (JavaScript, Node.js, Vue.js, HTML, CSS, etc...)</p>
               <p>映像製作 (動画撮影, 静止画撮影, Photoshop, PremierePro, AfterEffects)</p>
             </dd>
             <dt>すきなこと</dt>
@@ -36,7 +43,7 @@
       <div class="paragraph">
         <p>どろっせるは、なのくろの個人サークルです。</p>
         <p>拙いながらWeb開発、映像製作、同人誌製作などを行っています。友人のお手伝いのほうが多いです。</p>
-        <p>御用の際は、気兼ねなくメールまたはTwitterのDMよりお問い合わせください。</p>
+        <p>御用の際は、気兼ねなくメール (nanocloudx@gmail.com) またはTwitterのDMよりお問い合わせください。</p>
       </div>
     </section>
 
@@ -66,7 +73,7 @@ export default {
   name: 'about',
   data () {
     return {
-//      msg: 'Welcome to Your Vue.js App'
+      //
     };
   }
 };
@@ -75,7 +82,7 @@ export default {
 <style lang="scss">
   #about {
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     h2 {
       font-weight: bold;
@@ -97,7 +104,7 @@ export default {
       .profile-image {
         width: 250px;
         height: 250px;
-        margin: 0 2rem 2rem 0;
+        margin: 0 5rem 2rem 0;
       }
       .profile-description {
         h3 {
@@ -106,6 +113,10 @@ export default {
           margin-bottom: 0.8rem;
           span {
             font-weight: normal;
+          }
+          .profile-link {
+            font-size: 1.8rem;
+            margin-left: 1rem;
           }
         }
         dl {
@@ -125,6 +136,9 @@ export default {
     @media (max-width: 700px) {
       .profile {
         flex-direction: column;
+      }
+      .border {
+        width: 100%;
       }
     }
 
