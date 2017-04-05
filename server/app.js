@@ -102,8 +102,8 @@ app.use('/api/', (req, res, next) => {
     return;
   }
   // リファラーがdrossel.io(またはreviewApp)からでなければAPIを叩かせない
-  const drosselRegExp = /^https:\/\/((www|stage|localhost)\.)?drossel\.io(:3000)?\//;
-  const herokuRegExp = /^https:\/\/drossel-stage-pr-([0-9]+\.)?herokuapp\.com\//;
+  const drosselRegExp = /^https?:\/\/((www|stage|localhost)\.)?drossel\.io(:3000)?\//;
+  const herokuRegExp = /^https?:\/\/drossel-stage-pr-([0-9]+\.)?herokuapp\.com\//;
   if (!drosselRegExp.test(req.headers.referer) && !herokuRegExp.test(req.headers.referer)) {
     res.status(403);
     res.json({ error: 'FORBIDDEN' });
