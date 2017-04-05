@@ -20,16 +20,16 @@
             <dd>(たぶん)フロントエンドエンジニア</dd>
             <dt>できること</dt>
             <dd>
-              <p>Web開発 (JavaScript, Node.js, Vue.js, HTML, CSS, etc...)</p>
-              <p>映像製作 (動画撮影, 静止画撮影, Photoshop, PremierePro, AfterEffects)</p>
+              <p>Web開発 (JavaScript, Node.js, Vue.js, HTML, CSS, etc)</p>
+              <p>映像製作 (動画撮影, 静止画撮影, Photoshop, PremierePro, AfterEffects, etc)</p>
             </dd>
             <dt>すきなこと</dt>
-            <dd>旅行、深夜アニメ、ポーカー、他だいたいなんでも好き</dd>
+            <dd>旅行、深夜アニメ、テーブルゲーム、スポーツ（多趣味なのでだいたいなんでも好き）</dd>
             <dt>ごあいさつ</dt>
             <dd>
-              <p>なのくろです。26歳です。夜行性です。不健康です。かなり寂しがりです。</p>
-              <p>映像学校卒業後、東銀座の某イベント企業に勤務しています。ぱそこんが苦手です。</p>
-              <p>じっとしていられない性格なので、休日はあてもなく何処かをふらふらしています。</p>
+              <p>なのくろです。26歳です。寂しがりやです。彼女がいません。。。</p>
+              <p>映像学校卒業後、東銀座の某社で勤務しています。ぱそこんがにがてです。</p>
+              <p>暇が苦手な性格なので、何か作ってるか動いてるかしていないと駄目みたいです。</p>
               <p>誰か構ってください、宜しくお願い致しますm(_ _)m</p>
             </dd>
           </dl>
@@ -51,8 +51,8 @@
       <h2>このサイトについて</h2>
       <div class="border"></div>
       <div class="paragraph">
-        <p>このサイトは自己紹介を兼ねた、開発の予習の為に公開しているシングルページアプリケーションです。</p>
-        <p>Vue.js, Node.js, socket.io, Webpack, Redis, Postgresql, Github, Heroku, AWS などなど利用しています。</p>
+        <p>このサイトは自己紹介を兼ねた、開発予習の為に公開しているシングルページアプリケーションです。</p>
+        <p>(Vue.js, Node.js, socket.io, Webpack, Redis, Postgresql, Github, Heroku などを利用しています。)</p>
       </div>
       <div class="paragraph">
         <p>情報の表示には以下のサービスを利用しています。</p>
