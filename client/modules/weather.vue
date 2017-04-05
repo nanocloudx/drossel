@@ -55,10 +55,21 @@
               break;
           }
         });
+      },
+      getGeolocation() {
+        if ('geolocation' in navigator) {
+          /* geolocation is available */
+          navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position.coords.latitude, position.coords.longitude);
+          });
+        } else {
+          /* geolocation IS NOT available */
+        }
       }
     },
     mounted() {
       this.getWeather();
+      this.getGeolocation();
     },
   };
 </script>

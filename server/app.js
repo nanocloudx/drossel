@@ -84,6 +84,15 @@ passport.deserializeUser((account, done) => {
 //--------------------------------------------------
 // ルーティング
 //--------------------------------------------------
+// SSL強制
+app.use('*', (req, res, next) => {
+  if (req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'] === 'http') {
+    res.redirect('https://' + req.headers.host + req.url);
+  } else {
+    return next();
+  }
+});
+
 // APIアクセス
 app.use('/api/', (req, res, next) => {
   const contentType = req.headers['content-type'];
@@ -93,7 +102,7 @@ app.use('/api/', (req, res, next) => {
     return;
   }
   // リファラーがdrossel.io(またはreviewApp)からでなければAPIを叩かせない
-  const drosselRegExp = /^http:\/\/((www|stage|localhost)\.)?drossel\.io(:3000)?\//;
+  const drosselRegExp = /^https:\/\/((www|stage|localhost)\.)?drossel\.io(:3000)?\//;
   const herokuRegExp = /^https:\/\/drossel-stage-pr-([0-9]+\.)?herokuapp\.com\//;
   if (!drosselRegExp.test(req.headers.referer) && !herokuRegExp.test(req.headers.referer)) {
     res.status(403);
