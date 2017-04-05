@@ -34,7 +34,7 @@
       },
       onClickTwitter() {
         window.open(
-          'http://twitter.com/share?url=http://www.drossel.io/&text=どろっせる',
+          'http://twitter.com/share?url=https://www.drossel.io/&text=どろっせる',
           'twitter',
           'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'
         );

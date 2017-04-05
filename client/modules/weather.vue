@@ -56,6 +56,8 @@
           }
         });
       },
+      // TODO
+      // 任意でユーザーの位置情報の天気を表示できるような実装にする
       getGeolocation() {
         if ('geolocation' in navigator) {
           /* geolocation is available */
@@ -69,7 +71,7 @@
     },
     mounted() {
       this.getWeather();
-      this.getGeolocation();
+//      this.getGeolocation();
     },
   };
 </script>
