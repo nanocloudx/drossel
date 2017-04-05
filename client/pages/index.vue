@@ -37,7 +37,10 @@
     right: 0;
     bottom: 0;
     .center {
-      margin-top: 19rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     background-color: #666666;
     background-size: cover;

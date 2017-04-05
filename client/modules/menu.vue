@@ -73,7 +73,7 @@
     }
 
     ul {
-      padding: 2rem;
+      margin: 2rem;
       li {
         font-size: 1.6rem;
         border-bottom: 1px solid #666666;
