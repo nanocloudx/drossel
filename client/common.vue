@@ -1,7 +1,7 @@
 <template>
   <div id="common">
     <div class="header-bar"></div>
-    <div class="header" :class="{index: $route.name === 'INDEX'}">
+    <div class="header" :class="{index: $route.name === 'INDEX', fixed: this.isFixHeader}">
       <div class="menu-button" @click="isVisibleMenu=true">
         <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
@@ -30,22 +30,28 @@
     data () {
       return {
         isVisibleMenu: false,
-        windowWidth: 0
+        windowWidth: 0,
+        isFixHeader: false
       };
     },
     mounted() {
-      this.$nextTick(function() {
-        window.addEventListener('resize', this.getWindowWidth);
-        this.getWindowWidth();
+      this.$nextTick(() => {
+        window.addEventListener('resize', this.onResizeWindow);
+        window.addEventListener('scroll', this.onScrollWindow);
+        this.onResizeWindow();
       });
     },
     methods: {
-      getWindowWidth() {
+      onResizeWindow() {
         this.windowWidth = document.documentElement.clientWidth;
+      },
+      onScrollWindow() {
+        this.isFixHeader = window.scrollY >= 50;
       }
     },
     beforeDestroy() {
-      window.removeEventListener('resize', this.getWindowWidth);
+      window.removeEventListener('resize', this.onResizeWindow);
+      window.removeEventListener('scroll', this.onScrollWindow);
     },
     components: {
       'modules-menu': menu
@@ -67,7 +73,7 @@
     max-width: 1080px;
   }
   .content {
-    margin: 2rem 2rem 5rem;
+    margin: 15rem 2rem 5rem;
   }
   .header-bar {
     position: fixed;
@@ -78,15 +84,24 @@
     right: 0;
   }
   .header {
-    position: relative;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
     z-index: 200;
-    margin-top: 60px;
-    > * {
-      padding: 1rem 2rem;
-    }
+    margin-top: 5px;
+    background-color: #ffffff;
+    padding: 5px;
     &.index {
       color: #ffffff;
       text-shadow: 0 0 10px #000000;
+      background: none;
+      border: none !important;
+    }
+    &.fixed {
+      position: fixed;
+      top: 0;
+      border-bottom: 1px solid #eeeeee;
     }
     .menu-button {
       float: left;
@@ -97,10 +112,11 @@
     .breadcrumbs {
       float: left;
       border-left: 1px solid #dddddd;
+      padding: 1rem 2rem;
     }
     h1 {
       float: right;
-      padding-top: 0.6rem;
+      padding: 0.6rem 2rem 0;
       img {
         height: 26px;
       }
@@ -123,7 +139,7 @@
       margin: 0 auto;
       padding: 0.6rem 0;
       height: 5rem;
-      background-color: #ffffff;
+      background-color: #ffffff !important;
       border-bottom: 1px solid #dddddd;
       &.index {
         text-shadow: none;

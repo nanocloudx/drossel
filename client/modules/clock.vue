@@ -70,9 +70,10 @@
     color: #ffffff;
     text-align: center;
     text-shadow: 0 0 10px #000000;
+    white-space: nowrap;
   }
   .time {
-    font-size: 14rem;
+    font-size: 13rem;
     font-family: 'Share Tech Mono', monospace;
     margin-bottom: -2rem;
   }
