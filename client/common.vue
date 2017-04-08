@@ -89,9 +89,8 @@
     left: 0;
     right: 0;
     z-index: 200;
-    margin-top: 5px;
+    padding: 10px 50px 5px;
     background-color: #ffffff;
-    padding: 5px;
     &.index {
       color: #ffffff;
       text-shadow: 0 0 10px #000000;
