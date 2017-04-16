@@ -122,7 +122,7 @@
     }
     overflow: hidden;
   }
-  @media (max-width: 1094px) {
+  @media (max-width: 1194px) {
     #common {
       width: auto;
     }

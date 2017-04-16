@@ -4,7 +4,7 @@ class Live {
 
   constructor(server) {
     this.io = socketio.listen(server);
-    this.io.of('/live').on('connection', (socket) => {
+    this.io.of('/').on('connection', (socket) => {
       this.socket = socket;
 
       // connect

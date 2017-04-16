@@ -15,13 +15,14 @@
     name: 'weather',
     data () {
       return {
+        updateWeatherInterval: null,
         dayNight: null,
         weatherStatus: null,
         temp: null
       };
     },
     methods: {
-      getWeather() {
+      updateWeather() {
         request.get('/api/weather').then((res) => {
           this.weatherStatus = res.body.status;
           this.temp = res.body.temp;
@@ -58,21 +59,25 @@
       },
       // TODO
       // 任意でユーザーの位置情報の天気を表示できるような実装にする
-      getGeolocation() {
-        if ('geolocation' in navigator) {
-          /* geolocation is available */
-          navigator.geolocation.getCurrentPosition((position) => {
-            console.log(position.coords.latitude, position.coords.longitude);
-          });
-        } else {
-          /* geolocation IS NOT available */
-        }
-      }
+//      getGeolocation() {
+//        if ('geolocation' in navigator) {
+//          /* geolocation is available */
+//          navigator.geolocation.getCurrentPosition((position) => {
+//            console.log(position.coords.latitude, position.coords.longitude);
+//          });
+//        } else {
+//          /* geolocation IS NOT available */
+//        }
+//      }
     },
     mounted() {
-      this.getWeather();
+      this.updateWeather();
+      this.updateWeatherInterval = setInterval(this.updateWeather, 1000*60*5); // 5min
 //      this.getGeolocation();
     },
+    beforeDestroy() {
+      clearInterval(this.updateWeatherInterval);
+    }
   };
 </script>
 

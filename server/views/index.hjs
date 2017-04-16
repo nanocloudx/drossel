@@ -16,6 +16,7 @@
   </div>
   <script async src="/index.js"></script>
   <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script src="/socket.io/socket.io.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Cabin|Share+Tech+Mono" rel="stylesheet">
 </body>
 </html>
