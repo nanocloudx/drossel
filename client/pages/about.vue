@@ -2,6 +2,16 @@
   <div id="about">
 
     <section>
+      <h2>どろっせるについて</h2>
+      <div class="border"></div>
+      <div class="paragraph">
+        <p>どろっせるは、なのくろの個人サークルです。</p>
+        <p>拙いながらWeb開発、映像製作、同人誌製作などを行っています。友人のお手伝いのほうが多いです。</p>
+        <p>御用の際は、気兼ねなくメール (nanocloudx@gmail.com) またはTwitterのDMよりお問い合わせください。</p>
+      </div>
+    </section>
+
+    <section>
       <h2>私について</h2>
       <div class="border"></div>
       <div class="profile">
@@ -19,17 +29,15 @@
             <dt>おしごと</dt>
             <dd>(たぶん)フロントエンドエンジニア</dd>
             <dt>できること</dt>
-            <dd>
-              <p>Web開発 (JavaScript, Node.js, Vue.js, HTML, CSS, etc)</p>
-              <p>映像製作 (動画撮影, 静止画撮影, Photoshop, PremierePro, AfterEffects, etc)</p>
+            <dd>Web開発、映像製作
             </dd>
             <dt>すきなこと</dt>
             <dd>旅行、深夜アニメ、テーブルゲーム、スポーツ（その他、多趣味なのでだいたい好き）</dd>
             <dt>ごあいさつ</dt>
             <dd>
               <p>なのくろです。26歳です。寂しがりやです。。彼女がいません。。。</p>
-              <p>東銀座の某社に勤務しています。ぱそこんが苦手です。</p>
-              <p>暇が苦手な性格なので、何か作ってるか動いてるかしていないと駄目みたいです。</p>
+              <p>東銀座の某社でウェブサービスを作っています。パソコンが苦手です。</p>
+              <p>暇でいるのが苦手で、何か作ってるか動いていないと落ち着かない性格です。</p>
               <p>どうか誰か構ってください、宜しくお願い致しますm(_ _)m</p>
             </dd>
           </dl>
@@ -38,20 +46,10 @@
     </section>
 
     <section>
-      <h2>どろっせるについて</h2>
-      <div class="border"></div>
-      <div class="paragraph">
-        <p>どろっせるは、なのくろの個人サークルです。</p>
-        <p>拙いながらWeb開発、映像製作、同人誌製作などを行っています。友人のお手伝いのほうが多いです。</p>
-        <p>御用の際は、気兼ねなくメール (nanocloudx@gmail.com) またはTwitterのDMよりお問い合わせください。</p>
-      </div>
-    </section>
-
-    <section>
       <h2>このサイトについて</h2>
       <div class="border"></div>
       <div class="paragraph">
-        <p>このサイトは自己紹介を兼ねた、開発予習の為に公開しているシングルページアプリケーションです。</p>
+        <p>このサイトは自己紹介を兼ねて公開しているシングルページアプリケーションです。</p>
         <p>(Vue.js, Node.js, socket.io, Webpack, Redis, Postgresql, Github, Heroku などを利用しています。)</p>
       </div>
       <div class="paragraph">
