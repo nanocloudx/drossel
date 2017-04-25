@@ -81,7 +81,7 @@
     font-size: 3.5rem;
     margin-bottom: 2rem;
   }
-  @media (max-width: 1094px) {
+  @media (max-width: 700px) {
     .time {
       font-size: 10rem;
       margin-bottom: -1rem;
