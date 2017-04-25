@@ -97,7 +97,7 @@
       font-family: 'Share Tech Mono', monospace;
     }
   }
-  @media (max-width: 1094px) {
+  @media (max-width: 700px) {
     .weather {
       .result {
         font-size: 4rem;
