@@ -9,7 +9,8 @@
         :media="item.media"
         :publisher="item.publisher"
         :image="item.image"
-        :link="item.link"
+        :internalLink="item.internalLink"
+        :externalLink="item.externalLink"
       ></modules-thumbnail-item>
     </template>
   </div>

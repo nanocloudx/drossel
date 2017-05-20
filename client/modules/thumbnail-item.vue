@@ -1,14 +1,26 @@
 <template>
   <div class="thumbnail-item">
-    <a :href="link" target="_blank">
+
+    <router-link v-if="internalLink" :to="internalLink">
       <div class="image-container">
         <img :src="image" />
       </div>
       <h3 class="title">{{title}}</h3>
-      <p class="meta">{{year}} / {{media}} / {{publisher}}</p>
+      <p class="meta" v-if="year && media && publisher">{{year}} / {{media}} / {{publisher}}</p>
+      <p class="description">{{description1}}</p>
+      <p class="description">{{description2}}</p>
+    </router-link>
+
+    <a v-else :href="externalLink" target="_blank">
+      <div class="image-container">
+        <img :src="image" />
+      </div>
+      <h3 class="title">{{title}}</h3>
+      <p class="meta" v-if="year && media && publisher">{{year}} / {{media}} / {{publisher}}</p>
       <p class="description">{{description1}}</p>
       <p class="description">{{description2}}</p>
     </a>
+
   </div>
 </template>
 
@@ -28,7 +40,8 @@
       'media',
       'publisher',
       'image',
-      'link'
+      'internalLink',
+      'externalLink'
     ]
   };
 </script>
