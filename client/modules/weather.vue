@@ -5,12 +5,13 @@
       <span class="mono">{{temp}}</span><i class="wi wi-celsius"></i>
     </p>
     <p v-if="weatherStatus" class="location mono">TOKYO / JAPAN</p>
-    <p v-else>Weather N/A</p>
+    <loading v-else></loading>
   </div>
 </template>
 
 <script>
   import request from 'superagent';
+  import loading from './loading.vue';
   export default {
     name: 'weather',
     data () {
@@ -77,6 +78,9 @@
     },
     beforeDestroy() {
       clearInterval(this.updateWeatherInterval);
+    },
+    components: {
+      'loading': loading
     }
   };
 </script>

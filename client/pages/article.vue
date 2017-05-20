@@ -4,16 +4,19 @@
       <div class="media">
         <h2><i class="fa fa-code fa-fw" aria-hidden="true"></i>Tech</h2>
         <div class="border"></div>
+        <loading v-show="!qiita"></loading>
         <modules-article-list :items="qiita" :media="'Qiita'"></modules-article-list>
       </div>
       <div class="media">
         <h2><i class="fa fa-plane fa-fw" aria-hidden="true"></i>Travel</h2>
         <div class="border"></div>
+        <loading v-show="!medium"></loading>
         <modules-article-list :items="medium" :media="'Medium'"></modules-article-list>
       </div>
       <div class="media">
         <h2><i class="fa fa-twitter fa-fw" aria-hidden="true"></i>Twitter</h2>
         <div class="border"></div>
+        <loading v-show="!twitter"></loading>
         <modules-article-list :items="twitter" :media="'Twitter'"></modules-article-list>
       </div>
     </div>
@@ -22,6 +25,7 @@
 
 <script>
   import request from 'superagent';
+  import loading from '../modules/loading.vue';
   import articleList from '../modules/article-list.vue';
   export default {
     name: 'article',
@@ -33,6 +37,7 @@
       };
     },
     components: {
+      'loading': loading,
       'modules-article-list': articleList
     },
     methods: {
