@@ -2,10 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import common from './common.vue';
 import index from './pages/index.vue';
-import playground from './pages/playground.vue';
 import work from './pages/work.vue';
 import article from './pages/article.vue';
 import about from './pages/about.vue';
+import playground from './pages/playground.vue';
+import playgroundExample from './pages/playground/example.vue';
 
 Vue.use(VueRouter);
 
@@ -22,11 +23,6 @@ const router = new VueRouter({
           component: index
         },
         {
-          path: '/playground',
-          name: 'PLAYGROUND',
-          component: playground
-        },
-        {
           path: '/work',
           name: 'WORK',
           component: work
@@ -40,6 +36,16 @@ const router = new VueRouter({
           path: '/about',
           name: 'ABOUT',
           component: about
+        },
+        {
+          path: '/playground',
+          name: 'PLAYGROUND',
+          component: playground,
+        },
+        {
+          path: '/playground/example',
+          name: 'PLAYGROUND // EXAMPLE',
+          component: playgroundExample
         }
       ]
     }
