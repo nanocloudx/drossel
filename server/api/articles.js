@@ -67,7 +67,7 @@ function fetchMedium() {
       data.forEach((item) => {
         results.push({
           title: item.title,
-          timestamp: item.updatedAt,
+          timestamp: item.latestPublishedAt,
           url: `https://medium.com/nanocloudx/${item.uniqueSlug}`
         });
       });
